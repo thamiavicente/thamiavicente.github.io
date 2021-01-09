@@ -1,5 +1,5 @@
 <h1 align="center"><img src="https://github.com/thamiavicente/thamiavicente.github.io/blob/master/assets/img/favicon.png"> My Portfolio </h1>
-
+   
 <p align=center><img src= "https://img.shields.io/static/v1?label=Status&message=Developing&color=green&style=flat"> 
  <img src= "https://img.shields.io/static/v1?label=Language&message=HTML%205&color=red&style=flat"> 
  <img src= "https://img.shields.io/static/v1?label=Language&message=CSS%203&color=blue&style=flat"> 
