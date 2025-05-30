@@ -1,41 +1,36 @@
-<h1 align="center"><img src="https://github.com/thamiavicente/thamiavicente.github.io/blob/master/assets/img/favicon.png"> My Portfolio </h1>
-   
-<p align=center><img src= "https://img.shields.io/static/v1?label=Status&message=Developing&color=green&style=flat"> 
- <img src= "https://img.shields.io/static/v1?label=Language&message=HTML%205&color=red&style=flat"> 
- <img src= "https://img.shields.io/static/v1?label=Language&message=CSS%203&color=blue&style=flat"> 
- <img src= "https://img.shields.io/static/v1?label=Language&message=JavaScript&color=yellow&style=flat&"> 
- <img src= "https://img.shields.io/static/v1?label=Framework&message=Bootstrap&color=9cf&style=flat"></p>
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Getting Started
 
-## :clipboard: Description
-<p>I accumulated a number of jobs and projects throughout my career and years of study. And to organize them, I made a portfolio website using Bootstrap.</p>
+First, run the development server:
 
-## :scroll: Summary
-* [Description](#clipboard-description)
-* [Deploy](#rocket-deploy)
-* [Frameworks and libs](#books-frameworks-and-libs)
-* [How to run](#arrow_forward-how-to-run)
-* [Problems solution](#interrobang-problems-solution)
-* [License](#lock-license)
-
-## :rocket: Deploy
-- [My portfolio](https://thamiavicente.github.io/)
-- [Code](https://github.com/thamiavicente/thamiavicente.github.io)
-
-## :books: Frameworks and libs
-- [Bootstrap](https://getbootstrap.com/)
-- [Bootstrap Made - Templates](https://bootstrapmade.com/)
-
-## :arrow_forward: How to run
-<p>1. Clone the projet </p>
-
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
-git clone https://github.com/thamiavicente/thamiavicente.github.io.git
-```
-<p>2. As the Boostrap files are already installed, just open them in your text editor.</p>
 
-## :interrobang: Problems solution
-To see the problems that arose during development and the solutions that we found, visit the [issues](https://github.com/thamiavicente/thamiavicente.github.io/issues).</p>
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## :lock: License
-<p>Copyright:copyright: 2020 - Thami A. Vicente</p>
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

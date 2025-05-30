@@ -1,0 +1,37 @@
+.main {
+  & {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    flex: 1;
+  }
+
+  &__logo-img {
+    max-width: 472px;
+    position: absolute;
+    filter: var(--logo-filter);
+  }
+
+  &__logo-text {
+    animation: rotate 90s linear infinite;
+    transform-origin: center;
+
+    & text {
+      fill: var(--foreground);
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

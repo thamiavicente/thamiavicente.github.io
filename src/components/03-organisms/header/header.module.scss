@@ -1,0 +1,31 @@
+.header {
+    & {
+        padding: 1rem;
+
+        @media(min-width: 1024px) {
+            padding: 2rem;
+            padding-bottom: 0;
+        }
+    }
+
+    &__nav-menu {
+        display: flex;
+
+        @media (max-width: 1024px) {
+            justify-content: space-between;
+        }
+    }
+
+    &__nav-link {
+        & {
+            color: var(--foreground);
+            padding: 0.75rem 1.5rem;
+            display: inline-block;
+        }
+
+        &--active {
+            border: 2px solid var(--support);
+            border-radius: 50%;
+        }
+    }
+}
