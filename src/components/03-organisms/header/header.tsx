@@ -8,7 +8,7 @@ export default function Header() {
   const pathname = usePathname()
 
   const linkClasses = (href: string) => {
-    let navLinkClass = 'header__nav-link'
+    const navLinkClass = 'header__nav-link'
     return `
       ${styles[navLinkClass]}
       ${pathname === href ? styles[`${navLinkClass}--active`] : ''}
