@@ -1,0 +1,69 @@
+:root {
+  /* colors */
+  --background: #0a0a0a;
+  --foreground: #d9d9d9;
+  --support: #7ee5de;
+  --background-filter: invert(100%) blur(6px) brightness(0.5);
+  --logo-filter: none;
+
+  /* fonts */
+  --font-size: 16px;
+
+  /* sizes */
+  $tablet-width: 1024px;
+  $desktop-width: 1440px;
+}
+
+body.light {
+  --background: #d9d9d9;
+  --foreground: #0a0a0a;
+  --support: #a21626;
+  --background-filter: none;
+  --logo-filter: invert(100%) brightness(0);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: var(--font-size);
+  color: var(--foreground);
+  font-family: var(--font-roboto-sans);
+  background-image: url('/assets/bg-desktop-neon.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: var(--background-filter);
+  transition: color 0.5s, backdrop-filter 0.5s;
+
+  @media (max-width: 1024px) {
+    background-image: url('/assets/bg-mobile-neon.jpg');
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
