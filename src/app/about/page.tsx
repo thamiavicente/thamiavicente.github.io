@@ -10,7 +10,7 @@ export default function About() {
             </div>
             <h2 className={styles['about__job']}>Front end<br/>Developer</h2>
             <p className={styles['about__description']}>
-                I'm a brazillian front-end developer based in Veldhoven. Over the past 4 years, I've gained solid experience with Vue.js and CMS platforms such as Adobe Experience Manager, developing not only strong programming skills but also knowledge in team management and accessibility. Additionally, my background in design has given me a strong foundation in user experience and business thinking. My key soft skills include commitment, fast learning ability, and adaptability.
+                I&apos;m a brazillian front-end developer based in Veldhoven. Over the past 4 years, I&apos;ve gained solid experience with Vue.js and CMS platforms such as Adobe Experience Manager, developing not only strong programming skills but also knowledge in team management and accessibility. Additionally, my background in design has given me a strong foundation in user experience and business thinking. My key soft skills include commitment, fast learning ability, and adaptability.
             </p>
             <ul className={styles['about__skills-list']}>
                 <li className={styles['about__skills-item']}>VueJS</li>
