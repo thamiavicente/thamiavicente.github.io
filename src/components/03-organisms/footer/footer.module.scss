@@ -1,12 +1,13 @@
 .footer {
     & {
         display: grid;
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-columns: auto 1fr;
         align-items: center;
         padding: 1rem 0;
 
         @media(min-width: 1024px) {
             padding-bottom: 2rem;
+            grid-template-columns: 1fr auto 1fr;
         }
     }
 
@@ -15,11 +16,30 @@
         border: none;
         margin-left: 1rem;
         grid-column: 1;
+
+        &:hover svg path:nth-child(1) {
+            fill: var(--support);
+            stroke: var(--foreground);
+            stroke-width: 3;
+        }
+
+        @media(min-width: 1024px) {
+            margin-right: 1rem;
+        }
     }
 
     &__nav-menu-footer {
         grid-column: 2;
         width: 100%;
+        padding: 0 0.5rem;
+
+        @media(min-width: 375px) {
+            padding: 0 1rem;
+        }
+
+        @media(min-width: 1024px) {
+            padding: 0;
+        }
     }
 
     &__nav-link {
@@ -28,7 +48,7 @@
         border: var(--support) solid 2px;
         border-right: none;
         display: inline-block;
-        padding: 1rem;
+        padding: 1rem 0.5rem;
         text-align: center;
         width: 33%;
 
@@ -36,9 +56,14 @@
             border-right: var(--support) solid 2px;
         }
 
+        @media(min-width: 375px) {
+            padding: 1rem;
+        }
+
         @media(min-width: 1024px) {
             font-size: 0.875rem;
-            width: 320px;
+            min-width: 300px;
+            max-width: 320px;
         }
     }
 }
