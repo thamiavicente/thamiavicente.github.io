@@ -33,7 +33,7 @@ export default function Footer() {
 
     return (
         <footer className={styles['footer']}>
-            <button onClick={changeColorScheme} className={styles['footer__color-scheme-button']}>
+            <button onClick={changeColorScheme} className={styles['footer__color-scheme-button']} type="button" aria-label="Change the color scheme &#x1f408;">
                 <Cat colorScheme={userColorScheme}></Cat>
             </button>
             <nav className={styles['footer__nav-menu-footer']}>
