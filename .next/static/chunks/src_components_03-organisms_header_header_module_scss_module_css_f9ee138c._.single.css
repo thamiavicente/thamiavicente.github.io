@@ -1,0 +1,33 @@
+/* [project]/src/components/03-organisms/header/header.module.scss.module.css [app-client] (css) */
+.header-module-scss-module__58QnhG__header {
+  padding: 1rem;
+}
+
+@media (width >= 1024px) {
+  .header-module-scss-module__58QnhG__header {
+    padding: 2rem 2rem 0;
+  }
+}
+
+.header-module-scss-module__58QnhG__header__nav-menu {
+  display: flex;
+}
+
+@media (width <= 1024px) {
+  .header-module-scss-module__58QnhG__header__nav-menu {
+    justify-content: space-between;
+  }
+}
+
+.header-module-scss-module__58QnhG__header__nav-link {
+  color: var(--foreground);
+  padding: .75rem 1.5rem;
+  display: inline-block;
+}
+
+.header-module-scss-module__58QnhG__header__nav-link--active {
+  border: 2px solid var(--support);
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=src_components_03-organisms_header_header_module_scss_module_css_f9ee138c._.single.css.map*/

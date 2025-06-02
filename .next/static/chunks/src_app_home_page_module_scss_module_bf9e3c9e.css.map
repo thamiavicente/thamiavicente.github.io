@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///home/thamiris/Desktop/portifa/portfolio.github.io/src/app/home/page.module.scss.module.css"],"sourcesContent":[".main{width:100%;max-width:1440px;display:flex;justify-content:center;position:relative;align-items:center;flex:1}.main__logo-img{max-width:472px;position:absolute;filter:var(--logo-filter)}.main__logo-text{animation:rotate 90s linear infinite;transform-origin:center}.main__logo-text text{fill:var(--foreground);font-size:1.5rem}@keyframes rotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}"],"names":[],"mappings":"AAAA;;;;;;;;;;AAAkH;;;;;;AAA4E;;;;;AAA8E;;;;;AAA8D","debugId":null}}]
+}

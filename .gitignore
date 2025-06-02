@@ -1,3 +1,4 @@
 # Igonorar os arquivos abertos
 
 arquivos-abertos/
+node_modules

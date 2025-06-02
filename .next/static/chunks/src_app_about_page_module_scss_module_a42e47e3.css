@@ -1,0 +1,148 @@
+/* [project]/src/app/about/page.module.scss.module.css [app-client] (css) */
+.page-module-scss-module__-ytPBG__about {
+  grid-template: "title title"
+                 "photo job" 1fr
+                 "photo skills"
+                 "description description"
+                 / auto 1fr;
+  align-self: center;
+  gap: 0 .5rem;
+  max-width: 100%;
+  height: 100%;
+  padding: 1.25rem 1rem 2.25rem;
+  display: grid;
+}
+
+@media (width >= 1024px) {
+  .page-module-scss-module__-ytPBG__about {
+    grid-template-areas: "title title"
+                         "photo job"
+                         "photo description"
+                         "photo skills";
+    gap: 0 2rem;
+    max-width: 960px;
+    padding: 2rem 0 2.5rem;
+  }
+}
+
+.page-module-scss-module__-ytPBG__about__title {
+  text-transform: uppercase;
+  color: var(--support);
+  letter-spacing: 2pt;
+  grid-area: title;
+  margin: 0 0 1.25rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+@media (width >= 1024px) {
+  .page-module-scss-module__-ytPBG__about__title {
+    letter-spacing: 8pt;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.page-module-scss-module__-ytPBG__about__img-container {
+  grid-area: photo;
+  align-self: end;
+  width: 175px;
+  height: 188px;
+}
+
+@media (width >= 1024px) {
+  .page-module-scss-module__-ytPBG__about__img-container {
+    width: 448px;
+    height: 387px;
+  }
+}
+
+.page-module-scss-module__-ytPBG__about__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1.25rem;
+}
+
+@media (width >= 1024px) {
+  .page-module-scss-module__-ytPBG__about__img {
+    margin-bottom: 2rem;
+  }
+}
+
+.page-module-scss-module__-ytPBG__about__job {
+  text-transform: uppercase;
+  border-top: 2px solid var(--support);
+  grid-area: job;
+  align-self: end;
+  padding-top: .5rem;
+  padding-bottom: 1.25rem;
+  font-size: .875rem;
+}
+
+@media (width >= 1024px) {
+  .page-module-scss-module__-ytPBG__about__job {
+    padding-top: .75rem;
+    padding-bottom: 2.25rem;
+    font-size: 1.5rem;
+  }
+}
+
+.page-module-scss-module__-ytPBG__about__description {
+  grid-area: description;
+  align-self: end;
+  margin-top: 1.25rem;
+  padding-bottom: 0;
+}
+
+@media (width >= 1024px) {
+  .page-module-scss-module__-ytPBG__about__description {
+    margin-top: 0;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.page-module-scss-module__-ytPBG__about__skills-list {
+  flex-direction: column;
+  grid-area: skills;
+  align-self: end;
+  gap: .5rem;
+  padding-bottom: 1.25rem;
+  display: flex;
+}
+
+@media (width >= 1024px) {
+  .page-module-scss-module__-ytPBG__about__skills-list {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+}
+
+.page-module-scss-module__-ytPBG__about__skills-item {
+  align-items: center;
+  font-size: .875rem;
+  display: flex;
+}
+
+.page-module-scss-module__-ytPBG__about__skills-item:before {
+  content: "";
+  background-color: var(--support);
+  border-radius: 100%;
+  width: .75rem;
+  height: .75rem;
+  margin-right: .5rem;
+}
+
+@media (width >= 1024px) {
+  .page-module-scss-module__-ytPBG__about__skills-item {
+    font-size: 2rem;
+  }
+
+  .page-module-scss-module__-ytPBG__about__skills-item:before {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 1.25rem;
+  }
+}
+
+
+/*# sourceMappingURL=src_app_about_page_module_scss_module_a42e47e3.css.map*/

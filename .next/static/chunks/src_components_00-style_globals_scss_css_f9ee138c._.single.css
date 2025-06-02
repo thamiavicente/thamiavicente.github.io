@@ -1,0 +1,67 @@
+/* [project]/src/components/00-style/globals.scss.css [app-client] (css) */
+:root {
+  --background: #0a0a0a;
+  --foreground: #d9d9d9;
+  --support: #7ee5de;
+  --background-filter: invert(100%) blur(6px) brightness(.5);
+  --logo-filter: none;
+  --font-size: 16px;
+}
+
+body.light {
+  --background: #d9d9d9;
+  --foreground: #0a0a0a;
+  --support: #a21626;
+  --background-filter: none;
+  --logo-filter: invert(100%) brightness(0);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  max-width: 100vw;
+  font-size: var(--font-size);
+  color: var(--foreground);
+  font-family: var(--font-roboto-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backdrop-filter: var(--background-filter);
+  background-image: url("/assets/bg-desktop-neon.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  transition: color .5s, backdrop-filter .5s;
+  display: flex;
+  overflow-x: hidden;
+}
+
+@media (width <= 1024px) {
+  body {
+    background-image: url("/assets/bg-mobile-neon.jpg");
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=src_components_00-style_globals_scss_css_f9ee138c._.single.css.map*/

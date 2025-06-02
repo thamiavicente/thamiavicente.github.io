@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":["file:///home/thamiris/Desktop/portifa/portfolio.github.io/src/app/about/page.tsx"],"sourcesContent":["import Image from \"next/image\";\nimport styles from './page.module.scss';\n\nexport default function About() {\n    return (\n        <section>\n            <h1>Thamiris A. Vicente</h1>\n            <Image className={styles['main__logo-img']} src=\"/assets/profile-photo.jpeg\" role=\"presentation\" alt=\"\" width={380} height={380}></Image>\n        </section>\n    )\n}"],"names":[],"mappings":";;;;AAAA;;;;;;;;;AAGe,SAAS;IACpB,qBACI,8OAAC;;0BACG,8OAAC;0BAAG;;;;;;0BACJ,8OAAC,6HAAA,CAAA,UAAK;gBAAC,WAAW,MAAM,CAAC,iBAAiB;gBAAE,KAAI;gBAA6B,MAAK;gBAAe,KAAI;gBAAG,OAAO;gBAAK,QAAQ;;;;;;;;;;;;AAGxI","debugId":null}}]
+}

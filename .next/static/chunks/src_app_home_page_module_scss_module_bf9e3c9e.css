@@ -1,0 +1,39 @@
+/* [project]/src/app/home/page.module.scss.module.css [app-client] (css) */
+.page-module-scss-module__KM0DmW__main {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  position: relative;
+}
+
+.page-module-scss-module__KM0DmW__main__logo-img {
+  max-width: 472px;
+  filter: var(--logo-filter);
+  position: absolute;
+}
+
+.page-module-scss-module__KM0DmW__main__logo-text {
+  transform-origin: center;
+  animation: 90s linear infinite page-module-scss-module__KM0DmW__rotate;
+}
+
+.page-module-scss-module__KM0DmW__main__logo-text text {
+  fill: var(--foreground);
+  font-size: 1.5rem;
+}
+
+@keyframes page-module-scss-module__KM0DmW__rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/*# sourceMappingURL=src_app_home_page_module_scss_module_bf9e3c9e.css.map*/
