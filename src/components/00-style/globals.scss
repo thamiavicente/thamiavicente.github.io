@@ -1,6 +1,8 @@
+@import "./reset.css";
+
 :root {
   /* colors */
-  --background: #0a0a0a;
+  --background: #2f1113;
   --foreground: #d9d9d9;
   --support: #7ee5de;
   --background-filter: invert(100%) blur(6px) brightness(0.5);
@@ -15,11 +17,16 @@
 }
 
 body.light {
-  --background: #d9d9d9;
+  --background: #cfdbdf;
   --foreground: #0a0a0a;
   --support: #a21626;
   --background-filter: none;
   --logo-filter: invert(100%) brightness(0);
+  background-image: url('/assets/bg-desktop-neon.jpg');
+
+  @media (max-width: 1024px) {
+    background-image: url('/assets/bg-mobile-neon.jpg');
+  }
 }
 
 html {
@@ -32,7 +39,8 @@ body {
   font-size: var(--font-size);
   color: var(--foreground);
   font-family: var(--font-roboto-sans);
-  background-image: url('/assets/bg-desktop-neon.jpg');
+  background-color: var(--background);
+  background-image: url('/assets/bg-desktop.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -40,16 +48,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
-  backdrop-filter: var(--background-filter);
+  //backdrop-filter: var(--background-filter);
   transition: color 0.5s, backdrop-filter 0.5s;
+  line-height: normal;
 
   @media (max-width: 1024px) {
-    background-image: url('/assets/bg-mobile-neon.jpg');
+    background-image: url('/assets/bg-mobile.jpg');
   }
-}
-
-html, body {
-  height: 100%;
 }
 
 * {
@@ -66,4 +71,9 @@ a {
 
 button {
   cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
