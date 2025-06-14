@@ -1,11 +1,12 @@
-interface CatProps {
-    colorScheme?: String;
+type CatProps = {
+    colorScheme?: string;
+    ariaLabel?: string
   }
 
-export default function Cat({colorScheme = 'dark'}: CatProps) {
+export default function Cat({colorScheme = 'dark', ariaLabel = ''}: CatProps) {
     if (colorScheme === 'dark') {
         return (
-            <svg width="51" height="47" viewBox="0 0 51 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-label={ariaLabel} width="51" height="47" viewBox="0 0 51 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.64591 2C9.64591 2 16.1387 10.8735 25.2751 11.0855C34.4116 10.8735 40.9043 2 40.9043 2L49.5503 36.8055L25.2996 46L0.999947 36.8055L9.64591 2Z" fill="#D9D9D9" />
                 <path d="M25.6077 11.0893C16.2966 11.0893 9.64591 2 9.64591 2L0.999947 36.8055L25.2996 46L49.5503 36.8055L40.9043 2C40.9043 2 34.2536 11.0893 24.9426 11.0893" stroke="#D9D9D9" />
                 <path d="M16.2712 22.396C11.7452 22.3431 9.20251 27.584 9.20251 27.584C9.20251 27.584 11.2367 33.0368 16.2712 33.0368C21.3057 33.0368 23.3908 27.584 23.3908 27.584C23.3908 27.584 20.7972 22.4489 16.2712 22.396Z" fill="black" />
@@ -19,7 +20,7 @@ export default function Cat({colorScheme = 'dark'}: CatProps) {
     }
 
     return (
-        <svg width="52" height="46" viewBox="0 0 52 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg aria-label={ariaLabel} width="52" height="46" viewBox="0 0 52 46" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9.93559 0C9.93559 0 16.7235 9.2768 26.2752 9.49846C35.8269 9.2768 42.6149 0 42.6149 0L51.6538 36.3876L26.3008 46L0.896633 36.3876L9.93559 0Z" fill="black" />
             <path d="M16.862 21.3231C12.1303 21.2678 9.47198 26.747 9.47198 26.747C9.47198 26.747 11.5986 32.4476 16.862 32.4476C22.1254 32.4476 24.3051 26.747 24.3051 26.747C24.3051 26.747 21.5937 21.3785 16.862 21.3231Z" fill="#D9D9D9" />
             <path d="M16.8852 21.3231C16.2938 21.2678 15.9615 24.5675 15.9615 26.747C15.9615 28.9265 16.2273 32.4476 16.8852 32.4476C17.5432 32.4476 17.8156 28.9265 17.8156 26.747C17.8156 24.5675 17.4767 21.3785 16.8852 21.3231Z" fill="black" />

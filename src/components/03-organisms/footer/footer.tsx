@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 import styles from './footer.module.scss';
-import Cat from '../../../../public/assets/cat-icon';
+import Cat from '@/components/01-atoms/icons/cat-icon';
 
 export default function Footer() {
     const [ userColorScheme, setUserColorScheme ] = useState('dark')
@@ -37,9 +37,9 @@ export default function Footer() {
                 <Cat colorScheme={userColorScheme}></Cat>
             </button>
             <nav className={styles['footer__nav-menu-footer']}>
-                <a className={styles['footer__nav-link']} href="https://www.linkedin.com/in/thamiavicente">Linkedin</a>
-                <a className={styles['footer__nav-link']} href="https://github.com/thamiavicente">Github</a>
-                <a className={styles['footer__nav-link']} href="https://thamiavicente.medium.com">Medium</a>
+                <a target="_blank" rel="noopener noreferrer" className={styles['footer__nav-link']} href="https://www.linkedin.com/in/thamiavicente">Linkedin</a>
+                <a target="_blank" rel="noopener noreferrer" className={styles['footer__nav-link']} href="https://github.com/thamiavicente">Github</a>
+                <a target="_blank" rel="noopener noreferrer" className={styles['footer__nav-link']} href="https://thamiavicente.medium.com">Medium</a>
             </nav>
         </footer>
     )

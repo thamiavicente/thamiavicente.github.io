@@ -1,0 +1,5 @@
+export { default as FavIcon } from './fav-icon'
+export { default as EmailIcon } from './email-icon'
+export { default as CatIcon } from './cat-icon'
+export { default as LocationIcon } from './location-icon'
+export { default as LanguageIcon } from './language-icon'
