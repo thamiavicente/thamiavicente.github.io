@@ -1,0 +1,147 @@
+.contact {
+    & {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        gap: 1rem;
+        padding: 2rem 1rem;
+        
+        @media(min-width: 1024px) {
+            padding: 3rem 0 4rem;
+            max-width: 960px;
+            gap: 2rem;
+        }
+    }
+
+    &__information {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        
+        @media (min-width: 1024px) {
+            gap: 1.5rem;
+        }
+    }
+
+    &__call-to-action {
+        font-size: 1rem;
+        margin: 1rem 0 0.5rem;
+
+        @media (min-width: 1024px) {
+            font-size: 1.25rem;
+        }
+    }
+
+    &__email-link,
+    &__location,
+    &__projects {
+        display: flex;
+        align-items: center;
+
+        & svg {
+            margin-right: 8px;
+        }
+    }
+
+    &__email-link {
+        font-size: 1.25rem;
+        font-weight: 900;
+        border-bottom: 2px solid var(--foreground);
+        padding-bottom: 0.5rem;
+
+        & svg {            
+            @media (min-width: 1024px) {
+                width: 48px;
+                height: 48px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            font-size: 3rem;
+            border-bottom: 4px solid var(--foreground);
+        }
+    }
+    
+    &__location,
+    &__projects {
+        font-size: 1rem;
+
+        @media (min-width: 1024px) {
+            font-size: 2rem;
+
+            & svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
+    &__projects {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    &__separator {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.5rem;
+        
+        @media (min-width: 1024px) {
+            font-size: 2.25rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        @media (min-width: 1024px) {
+            flex-direction: row;
+        }
+    }
+
+    &__label-text,
+    &__input,
+    &__text-area,
+    &__button {
+        padding: 0.5rem 1.25rem;
+    }
+
+    &__label-text {
+        background-color: var(--support);
+        color: var(--support-background);
+        text-transform: uppercase;
+        font-weight: bold;
+        text-wrap: nowrap;
+        min-width: 164px;
+        font-size: 1rem;
+    }
+
+    &__input,
+    &__text-area,
+    &__button {
+        width: 100%;
+        border: 2px solid var(--support);
+        background: none;
+        font-size: 1rem;
+    }
+
+    &__text-area {
+        min-height: 200px;
+    }
+
+    &__button {
+        background-color: var(--support);
+        color: var(--support-background);
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}

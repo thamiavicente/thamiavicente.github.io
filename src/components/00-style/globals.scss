@@ -5,6 +5,8 @@
   --background: #2f1113;
   --foreground: #d9d9d9;
   --support: #7ee5de;
+  --support-background: #0a0a0a;
+
   --background-filter: invert(100%) blur(6px) brightness(0.5);
   --logo-filter: none;
 
@@ -16,10 +18,21 @@
   $desktop-width: 1440px;
 }
 
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body.light {
   --background: #cfdbdf;
   --foreground: #0a0a0a;
   --support: #a21626;
+  --support-background: #d9d9d9;
+
   --background-filter: none;
   --logo-filter: invert(100%) brightness(0);
   background-image: url('/assets/bg-desktop-neon.jpg');
@@ -27,10 +40,6 @@ body.light {
   @media (max-width: 1024px) {
     background-image: url('/assets/bg-mobile-neon.jpg');
   }
-}
-
-html {
-  color-scheme: light dark;
 }
 
 body {
@@ -61,6 +70,19 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: var(--font-roboto-sans);
+}
+
+main {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+
+  @media (min-width: 1023px) {
+    width: auto;
+  }
 }
 
 a {
