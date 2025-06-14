@@ -3,8 +3,11 @@ import styles from './page.module.scss';
 
 export default function Home() {
   return (
-    <main className={styles['main']}>
-      <Image className={styles['main__logo-img']} src="/assets/logo-grafism.png" role="presentation" alt="" width={380} height={380}/>
+    <main className={styles['home']} aria-describedby="homePageDescription">
+      <h1 className={styles['home__description']} id="homePageDescription">
+        Thamiris Andrade Vicente's Code & Work
+      </h1>
+      <Image className={styles['home__logo-img']} src="/assets/logo-grafism.png" role="presentation" alt="" width={380} height={380}/>
       <svg width="472" height="472" viewBox="0 0 472 472">
         <defs>
           <path
@@ -16,12 +19,12 @@ export default function Home() {
           />
         </defs>
 
-        <g className={styles['main__logo-text']} >
+        <g className={styles['home__logo-text']} >
           <text>
             <textPath href="#circlePath" startOffset="0" textLength="1130">
               &#8226; tav code and art &#8226; thamiris andrade vicente code and art &nbsp;
-              </textPath>
-            </text>
+            </textPath>
+          </text>
         </g>
       </svg>
     </main>
