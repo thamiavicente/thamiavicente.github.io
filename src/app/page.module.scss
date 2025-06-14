@@ -1,4 +1,6 @@
-.main {
+@import '@/components/00-style/mixins.scss';
+
+.home {
   & {
     width: 100%;
     max-width: 1440px;
@@ -7,6 +9,10 @@
     position: relative;
     align-items: center;
     flex: 1;
+  }
+
+  &__description {
+    @include screen-reader-only
   }
 
   &__logo-img {
