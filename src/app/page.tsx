@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className={styles['home']} aria-describedby="homePageDescription">
       <h1 className={styles['home__description']} id="homePageDescription">
-        Thamiris Andrade Vicente's Code & Work
+        Thamiris Andrade Vicente&apos;s Code & Work
       </h1>
       <Image className={styles['home__logo-img']} src="/assets/logo-grafism.png" role="presentation" alt="" width={380} height={380}/>
       <svg width="472" height="472" viewBox="0 0 472 472">
