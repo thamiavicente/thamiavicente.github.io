@@ -3,7 +3,7 @@ import styles from './page.module.scss';
 
 export default function About() {
     return (
-        <section className={styles['about']}>
+        <main className={styles['about']}>
             <h1 className={styles['about__title']}>Thamiris Andrade Vicente</h1>
             <div className={styles['about__img-container']}>
             <Image className={styles['about__img']} src="/assets/profile-photo.jpeg" alt="Portrait of Thamiris smiling against a neutral background." width={576} height={1024}></Image>
@@ -17,6 +17,6 @@ export default function About() {
                 <li className={styles['about__skills-item']}>AEM</li>
                 <li className={styles['about__skills-item']}>A11y</li>
             </ul>
-        </section>
+        </main>
     )
 }
