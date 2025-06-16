@@ -40,6 +40,8 @@
 
         & svg {
             margin-right: 8px;
+            fill: var(--foreground);
+            transition: fill 0.5s;
         }
     }
 
