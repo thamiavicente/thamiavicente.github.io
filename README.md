@@ -1,11 +1,15 @@
-# Thamiris Andrade Vicente – Personal Website
-Welcome to my personal website! This project aims to centralize my professional contacts, share a bit of my journey, and serve as a space to practice **web accessibility** and modern technologies such as **React** and **Next.js**.
+<img alt="Thamiris Andrade Vicente Logo" src="src/app/favicon.ico" style="width: 120px">
 
-## :rocket: [Deploy](https://thamiavicente-github-io.vercel.app/)
+# Welcome to my personal website
 [![Status: in development](https://img.shields.io/badge/status-in%20development-yellow)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![Framework: Nextjs](https://img.shields.io/badge/framework-Nextjs-blue.svg)](https://nextjs.org/)
 [![Language: Typescript](https://img.shields.io/badge/language-TypeScript-blue.svg)](https://nextjs.org/)
+
+This project aims to centralize my professional contacts, share a bit of my journey, and serve as a space to practice **web accessibility** and modern technologies such as **React** and **Next.js**.
+
+| :rocket: [Deploy](https://thamiavicente-github-io.vercel.app/) | :octocat: [Code](https://github.com/thamiavicente/thamiavicente.github.io) |
+|-|-|
 
 ## :sparkles: Features
 
@@ -18,7 +22,7 @@ Welcome to my personal website! This project aims to centralize my professional 
 > [!NOTE]
 This project is **in development**: more sections, visual improvements, automated tests, and **Nodemailer** integration are coming soon.
 
-## :hammer: Tools
+## :hammer_and_pick: Tools
 
 | Technology   | Version     |
 |--------------|-------------|
