@@ -15,7 +15,7 @@ Welcome to my personal website! This project aims to centralize my professional 
 - Accessibility best practices applied (tested with Google Lighthouse and WAVE)
 - Built using Next.js App Router (/app) with file-based routing
   
-[!NOTE]
+> [!NOTE]
 This project is **in development**: more sections, visual improvements, automated tests, and **Nodemailer** integration are coming soon.
 
 ## :hammer: Tools
@@ -43,16 +43,16 @@ npm install
 # 4. Start the development server
 npm run dev
 ```
-[!TIP]
+> [!TIP]
 The app will be available at http://localhost:3000.
 
 ## :white_check_mark: Testing
-[x] Google Lighthouse
-[x] WAVE
-[] Unit tests
-[] End-to-end tests
+- [x] Google Lighthouse
+- [x] WAVE
+- [ ] Unit tests
+- [ ] End-to-end tests
 
-[!WARNING]
+> [!WARNING]
 Automated testing pending (unit and end-to-end).
 
 ## :bulb: Contributions
