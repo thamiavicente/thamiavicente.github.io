@@ -8,8 +8,8 @@
 
 This project aims to centralize my professional contacts, share a bit of my journey, and serve as a space to practice **web accessibility** and modern technologies such as **React** and **Next.js**.
 
-| :rocket: [Deploy](https://thamiavicente-github-io.vercel.app/) | :octocat: [Code](https://github.com/thamiavicente/thamiavicente.github.io) |
-|-|-|
+| :rocket: [Deploy](https://thamiavicente-github-io.vercel.app/) | :octocat: [Code](https://github.com/thamiavicente/thamiavicente.github.io) | :art: [Layout](https://www.figma.com/design/MiNdzYT8NJ8ik6IKV2J5sZ/thamiavicente.github.io?node-id=0-1&m=dev&t=JWIL95lUQuPPUZj0-1)|
+|-|-|-|
 
 ## :sparkles: Features
 
