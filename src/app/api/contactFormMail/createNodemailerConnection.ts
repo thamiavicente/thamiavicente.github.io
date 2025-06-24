@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer");
+import nodemailer from 'nodemailer'
 
 export const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -25,6 +25,7 @@ export const sendEmail = async (name: string, email: string, telephone: string, 
     })
 
     return {
+      infoStatus: info,
       status: 200,
       statusMessage: 'Message sent successfully'
     }

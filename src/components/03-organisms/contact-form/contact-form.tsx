@@ -22,11 +22,13 @@ export default function ContactForm() {
             }),
         })
 
-        //const data = await response.json()
+        const data = await response.json()
+        if(data.status === 200) return 'success'
+        return 'failed'
     }
 
     return (
-        <form onSubmit={handleSubmit} method="post" className={styles['contact-form']}>
+        <form onSubmit={handleSubmit} method="post" className={styles['contact-form__form']}>
             <p className={styles['contact-form__separator']}>or send me a message:</p>
             <label className={styles['contact-form__label']}>
                 <span className={styles['contact-form__label-text']}>
