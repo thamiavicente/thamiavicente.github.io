@@ -1,7 +1,24 @@
+'use client'
+import { useEffect, useState } from 'react'
 import styles from './page.module.scss'
 import { FavIcon, LocationIcon, EmailIcon } from '@/components/01-atoms/icons'
+import ContactForm from '@/components/03-organisms/contact-form/contact-form'
 
 export default function Contact() {
+    const [isConnected, setIsConnected] = useState(false)
+    
+    useEffect(() => {
+        const checkConnection = async () => {
+            const connection = await (await fetch('/api/contactFormMail', {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
+            })).json()
+            if (connection.status === 200) setIsConnected(true)
+          }
+      
+        checkConnection()
+    }, [])
+
     return (
         <main className={styles['contact']}>
             <section className={styles['contact__information']}>
@@ -21,37 +38,7 @@ export default function Contact() {
                     </a>
                 </h1>
             </section>
-            {/* <form className={styles['contact__form']}>
-                <p className={styles['contact__separator']}>or send me a message:</p>
-                <label className={styles['contact__label']}>
-                    <span className={styles['contact__label-text']}>
-                        name
-                    </span>
-                    <input className={styles['contact__input']} type="text" required autoComplete="name" title="name">
-                    </input>
-                </label>
-                <label className={styles['contact__label']}>
-                    <span className={styles['contact__label-text']}>
-                        e-mail
-                    </span>
-                    <input className={styles['contact__input']} type="email" required autoComplete="email" title="e-mail">
-                    </input>
-                </label>
-                <label className={styles['contact__label']}>
-                    <span className={styles['contact__label-text']}>
-                        phone number
-                    </span>
-                    <input className={styles['contact__input']} type="tel" required autoComplete="phone" title="phone" pattern="^(?=(?:.*\d){8,})[0-9()+.\-]+$">
-                    </input>
-                </label>
-                <label className={styles['contact__label']}>
-                    <span className={styles['contact__label-text']}>
-                        message
-                    </span>
-                    <textarea className={styles['contact__text-area']} required></textarea>
-                </label>
-                <button className={styles['contact__button']} type="submit">Send</button>
-            </form> */}
+            { isConnected && <ContactForm></ContactForm> }
         </main>
     )
 }
