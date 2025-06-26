@@ -63,13 +63,25 @@
             border-bottom: 4px solid var(--foreground);
         }
     }
+
+    &__more-information {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        @media(min-width: 1024px) {
+            flex-direction: row;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+    }
     
     &__location,
     &__projects {
         font-size: 1rem;
 
         @media (min-width: 1024px) {
-            font-size: 2rem;
+            font-size: 1.5rem;
 
             & svg {
                 width: 32px;
@@ -81,5 +93,14 @@
     &__projects {
         text-decoration: underline;
         cursor: pointer;
+    }
+
+    &__separator {
+        display: none;
+
+        @media(min-width: 1024px) {
+            display: inline;
+            font-size: 1.5rem;
+        }
     }
 }

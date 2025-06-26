@@ -1,63 +1,56 @@
-'use client';
-import { useState } from 'react'
-import styles from './contact-form.module.scss'
+'use client'
+import { useAppSelector, useAppDispatch } from '@/app/api/store/hooks'
+import { useEffect } from 'react'
+import { setConnected } from '@/components/02-molecules/form/formSlice'
+
+import Form from '@/components/02-molecules/form/form'
+import FeedbackMessage from '@/components/02-molecules/feedback-message/feedback-message'
 
 export default function ContactForm() {
-    const [ name, setName ] = useState('')
-    const [ email, setEmail ] = useState('')
-    const [ telephone, setTelephone ] = useState('')
-    const [ message, setMessage ] = useState('')
+    const step = useAppSelector((state) => state.form.step)
+    const dispatch = useAppDispatch()
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+    const showForm = () => dispatch(setConnected(true))
 
-        const response = await fetch('/api/contactFormMail', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                name,
-                email,
-                telephone,
-                message,
-            }),
-        })
-
-        const data = await response.json()
-        if(data.status === 200) return 'success'
-        return 'failed'
-    }
+    useEffect(() => {
+        const checkConnection = async () => {
+            const connection = await (await fetch('/api/contactFormMail', {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
+            })).json()
+            
+            if (connection.status === 200) {
+              showForm()
+              return
+            }
+            dispatch(setConnected(false))
+            return
+          }
+      
+        checkConnection()
+    }, [])
 
     return (
-        <form onSubmit={handleSubmit} method="post" className={styles['contact-form__form']}>
-            <p className={styles['contact-form__separator']}>or send me a message:</p>
-            <label className={styles['contact-form__label']}>
-                <span className={styles['contact-form__label-text']}>
-                    name
-                </span>
-                <input onChange={e => setName(e.target.value)} className={styles['contact-form__input']} type="text" required autoComplete="name" title="name">
-                </input>
-            </label>
-            <label className={styles['contact-form__label']}>
-                <span className={styles['contact-form__label-text']}>
-                    e-mail
-                </span>
-                <input onChange={e => setEmail(e.target.value)} className={styles['contact-form__input']} type="email" required autoComplete="email" title="e-mail">
-                </input>
-            </label>
-            <label className={styles['contact-form__label']}>
-                <span className={styles['contact-form__label-text']}>
-                    phone number
-                </span>
-                <input onChange={e => setTelephone(e.target.value)} className={styles['contact-form__input']} type="tel" required autoComplete="phone" title="phone" pattern="^(?=(?:.*\d){8,})[0-9()+.\-]+$">
-                </input>
-            </label>
-            <label className={styles['contact-form__label']}>
-                <span className={styles['contact-form__label-text']}>
-                    message
-                </span>
-                <textarea onChange={e => setMessage(e.target.value)} className={styles['contact-form__text-area']} rows={10} required></textarea>
-            </label>
-            <button className={styles['contact-form__button']} type="submit">Send</button>
-        </form>
+      <>
+        { step === 'form' && <Form></Form> }
+        { step === 'successSendMessage'
+          && <FeedbackMessage
+                feedbackTitle="Thank you"
+                feedbackSubtitle="for your message :)"
+                feedbackDescription="You'll get a reply as soon as possible"
+                feedbackButton="send another message"
+                buttonAction={showForm}>
+            </FeedbackMessage>
+        }
+        { step === 'errorSendMessage'
+          && <FeedbackMessage
+                feedbackTitle="Oooops!"
+                feedbackSubtitle="something went wrong :("
+                feedbackDescription={[<p>Your message was not sent. Please try again later or send me an email at </p>, <a href="mailto:thamiavicente@gmail.com">thamiavicente@gmail.com</a>]}
+                feedbackButton="try again"
+                buttonAction={showForm}>
+            </FeedbackMessage>
+        }
+      </>
     )
 }

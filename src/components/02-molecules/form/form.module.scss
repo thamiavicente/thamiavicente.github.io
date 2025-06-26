@@ -1,8 +1,9 @@
-.contact-form {
+.form {
     & {
         display: flex;
         flex-direction: column;
-        gap: 1.25rem
+        gap: 1.25rem;
+        margin-top: 2rem;
     }
 
     &__separator {
@@ -11,7 +12,7 @@
         font-size: 1rem;
         
         @media (min-width: 1024px) {
-            font-size: 2.25rem;
+            font-size: 1.5rem;
         }
     }
 
@@ -40,6 +41,12 @@
         text-wrap: nowrap;
         min-width: 164px;
         font-size: 1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__label-text:has(+ &__text-area) {
+        align-items: start;
     }
 
     &__input,
@@ -57,5 +64,6 @@
         text-align: left;
         text-transform: uppercase;
         font-weight: bold;
+        text-align: center;
     }
 }

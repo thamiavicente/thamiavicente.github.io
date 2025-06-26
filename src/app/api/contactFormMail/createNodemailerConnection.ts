@@ -9,19 +9,20 @@ export const transporter = nodemailer.createTransport({
 });
 
 export const sendEmail = async (name: string, email: string, telephone: string, message: string) => {
-  try {
+  try {   
     const info = await transporter.sendMail({
       from: 'ThamiAVicente - Vercel',
       to: process.env.GOOGLE_EMAIL,
       subject: `From: ${name}`,
       html:
-      `${message}
-      <hr>
-      <b>from:</b> ${name}
+      `<b>from:</b> ${name}
       <br>
       <b>telephone:</b> ${telephone}
       <br>
-      <b>email:</b> ${email}`,
+      <b>email:</b> ${email}
+      <hr>
+      ${message}`
+
     })
 
     return {
