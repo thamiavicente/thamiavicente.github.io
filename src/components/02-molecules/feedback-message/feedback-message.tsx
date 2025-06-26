@@ -1,4 +1,4 @@
-import { ElementType, MouseEventHandler, ReactElement } from 'react'
+import { MouseEventHandler, ReactElement } from 'react'
 import styles from './feedback-message.module.scss'
 
 type Props = {
