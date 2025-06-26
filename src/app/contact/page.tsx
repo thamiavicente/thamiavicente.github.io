@@ -1,44 +1,37 @@
 'use client'
-import { useEffect, useState } from 'react'
-import styles from './page.module.scss'
+import StoreProvider  from '@/app/api/store/store-provider'
+
 import { FavIcon, LocationIcon, EmailIcon } from '@/components/01-atoms/icons'
 import ContactForm from '@/components/03-organisms/contact-form/contact-form'
 
-export default function Contact() {
-    const [isConnected, setIsConnected] = useState(false)
-    
-    useEffect(() => {
-        const checkConnection = async () => {
-            const connection = await (await fetch('/api/contactFormMail', {
-                method: 'GET',
-                headers: { 'Content-Type': 'application/json' }
-            })).json()
-            if (connection.status === 200) setIsConnected(true)
-          }
-      
-        checkConnection()
-    }, [])
+import styles from './page.module.scss'
 
+export default function Contact() {
     return (
-        <main className={styles['contact']}>
-            <section className={styles['contact__information']}>
-                <p className={styles['contact__projects']}>
-                    <FavIcon></FavIcon>
-                    <a className={styles['contact__projects-link']} target='_blank' rel="noopener noreferrer" href="https://gist.github.com/thamiavicente/d24ec39d380896e03a22896ae4a55c8f">Projects</a>
-                </p>
-                <p className={styles['contact__location']}>
-                    <LocationIcon></LocationIcon>                
-                    <span>Veldhoven, Netherland</span>
-                </p>
-                <h1 className={styles['contact__email']}>
-                    <p className={styles['contact__call-to-action']}>Contact me via e-mail:</p>
-                    <a href="mailto:thamiavicente@gmail.com" className={styles["contact__email-link"]}>
-                        <EmailIcon></EmailIcon>
-                        <span>thamiavicente@gmail.com</span>
-                    </a>
-                </h1>
-            </section>
-            { isConnected && <ContactForm></ContactForm> }
-        </main>
+        <StoreProvider>
+            <main className={styles['contact']}>
+                <section className={styles['contact__information']}>
+                    <div className={styles['contact__more-information']}>
+                        <p className={styles['contact__projects']}>
+                            <FavIcon></FavIcon>
+                            <a className={styles['contact__projects-link']} target='_blank' rel="noopener noreferrer" href="https://gist.github.com/thamiavicente/d24ec39d380896e03a22896ae4a55c8f">Projects</a>
+                        </p>
+                        <span className={styles['contact__separator']}>|</span>
+                        <p className={styles['contact__location']}>
+                            <LocationIcon></LocationIcon>                
+                            <span>Veldhoven, Netherland</span>
+                        </p>
+                    </div>
+                    <h1 className={styles['contact__email']}>
+                        <p className={styles['contact__call-to-action']}>Contact me via e-mail:</p>
+                        <a href="mailto:thamiavicente@gmail.com" className={styles["contact__email-link"]}>
+                            <EmailIcon></EmailIcon>
+                            <span>thamiavicente@gmail.com</span>
+                        </a>
+                    </h1>
+                </section>
+                <ContactForm></ContactForm>
+            </main>
+        </StoreProvider>
     )
 }
