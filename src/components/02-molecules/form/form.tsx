@@ -35,7 +35,9 @@ export default function Form() {
             }),
         })
 
-        if (response.status === 200) {
+        const responseJson = await response.json()
+
+        if (responseJson.success === 200) {
             dispatch(setSuccessSendMessage(true))
             return
         }
