@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '@/app/api/store/store'
+import type { RootState } from '@/app/lib/store/store'
 
 export type FormState = {
     name: string,
@@ -41,7 +41,7 @@ export const formSlice = createSlice({
         },
         setErrorSendMessage: (state, action: PayloadAction<boolean>) => {
             state.errorSendMessage = action.payload
-            if(action.payload) state.step = 'errorSendMessage'
+            if(action.payload) state.step = 'form'
         },
     }
 })
