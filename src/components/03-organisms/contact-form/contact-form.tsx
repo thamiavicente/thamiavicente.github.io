@@ -1,6 +1,6 @@
 'use client'
 import { useAppSelector, useAppDispatch } from '@/app/lib/store/hooks'
-import { useEffect, useCallback } from 'react'
+import { useEffect } from 'react'
 import { setConnected, setErrorSendMessage, setSuccessSendMessage } from '@/components/02-molecules/form/formSlice'
 
 import Form from '@/components/02-molecules/form/form'
