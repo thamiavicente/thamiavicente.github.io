@@ -28,6 +28,7 @@ export const sendEmail = async (name: string, email: string, telephone: string, 
     return {
       infoStatus: info,
       status: 200,
+      success: true,
       statusMessage: 'Message sent successfully'
     }
 
@@ -42,15 +43,17 @@ export const sendEmail = async (name: string, email: string, telephone: string, 
 
 export const testConnection = async () => {
   const connection = await transporter.verify()
-  const response = {
+  if(connection) {
+    return {
+      status: 200,
+      success: true,
+      statusMessage: 'Connected with success'
+    }
+  }
+
+  return {
     status: 500,
+    error: true,
     statusMessage: 'Could not connect to e-mail'
   }
-
-  if(connection) {
-    response. status = 200
-    response.statusMessage = 'Connected with success'
-  }
-
-  return response
 }
