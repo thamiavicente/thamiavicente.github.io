@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 
 import styles from './footer.module.scss';
 import Cat from '@/components/01-atoms/icons/cat-icon';
+import dynamic from "next/dynamic";
+
+const VLibras = dynamic(() => import("@/components/01-atoms/vlibras/vlibras"), { ssr: false })
 
 export default function Footer() {
     const [ userColorScheme, setUserColorScheme ] = useState('dark')
@@ -41,6 +44,7 @@ export default function Footer() {
                 <a target="_blank" rel="noopener noreferrer" className={styles['footer__nav-link']} href="https://github.com/thamiavicente">Github</a>
                 <a target="_blank" rel="noopener noreferrer" className={styles['footer__nav-link']} href="https://thamiavicente.medium.com">Medium</a>
             </nav>
+            <VLibras/>
         </footer>
     )
 }
