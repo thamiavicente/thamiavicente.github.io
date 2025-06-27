@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { MouseEventHandler, ReactElement } from 'react'
 import styles from './feedback-message.module.scss'
 
@@ -7,7 +8,8 @@ type Props = {
     feedbackDescription?: string | ReactElement | (string | ReactElement)[],
     feedbackButton?: string,
     buttonAction?: MouseEventHandler<HTMLButtonElement>,
-    buttonType?: 'button' | 'submit' | 'reset'
+    buttonType?: 'button' | 'submit' | 'reset',
+    messageId: string
 }
 
 export default function FeedbackMessage({
@@ -16,10 +18,23 @@ export default function FeedbackMessage({
     feedbackDescription,
     feedbackButton,
     buttonAction,
-    buttonType = 'button' }: Props) {
+    buttonType = 'button',
+    messageId }: Props) {
+
+    useEffect(() => {
+        const element = document.querySelector(`#${messageId}`)
+        const top = element?.getBoundingClientRect().top
+        if(top) {
+            window.scroll({
+                top: top,
+                left: 100,
+                behavior: "smooth",
+              });
+        }
+    }, [])
 
     return (
-        <section className={styles['feedback-message']}>
+        <section id={messageId} className={styles['feedback-message']}>
             <h2 className={styles['feedback-message__title']}>
                 {feedbackTitle}
             </h2>
