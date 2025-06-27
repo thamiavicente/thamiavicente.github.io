@@ -1,5 +1,7 @@
-import { useAppDispatch , useAppSelector } from '@/app/api/store/hooks'
-import { setName, setEmail, setTelephone, setMessage, setSuccessSendMessage, setErrorSendMessage } from '@/components/02-molecules/form/formSlice'
+import { useAppDispatch , useAppSelector } from '@/app/lib/store/hooks'
+import { setName, setEmail, setTelephone, setMessage, setSuccessSendMessage, setErrorSendMessage } from './formSlice'
+import Recaptcha from '@/components/01-atoms/recaptcha/recaptcha'
+import { generateToken } from '@/app/lib/recaptcha/recaptcha'
 
 import styles from './form.module.scss'
 
@@ -14,6 +16,13 @@ export default function Form() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        const token = await generateToken()
+        
+        if(!token) {
+            dispatch(setErrorSendMessage(true))
+            return
+        }
+
         const response = await fetch('/api/contactFormMail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -22,6 +31,7 @@ export default function Form() {
                 email,
                 telephone,
                 message,
+                token
             }),
         })
 
@@ -64,6 +74,7 @@ export default function Form() {
                 </span>
                 <textarea onChange={e => dispatch(setMessage(e.target.value))} className={styles['form__text-area']} rows={10} required></textarea>
             </label>
+            <Recaptcha></Recaptcha>
             <button className={styles['form__button']} type="submit">Send</button>
         </form>
     )
