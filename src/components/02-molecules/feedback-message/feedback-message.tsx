@@ -31,7 +31,7 @@ export default function FeedbackMessage({
                 behavior: "smooth",
               });
         }
-    }, [])
+    }, [messageId])
 
     return (
         <section id={messageId} className={styles['feedback-message']}>
