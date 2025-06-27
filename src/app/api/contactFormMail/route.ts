@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   const { name, email, telephone, message, token } = await request.json()
 
   const isTokenValidated = await validateToken(token)
-  if(isTokenValidated.error) return NextResponse.json({ ...isTokenValidated })
+  if(isTokenValidated.status !== 200) return NextResponse.json({ ...isTokenValidated })
 
   const responseForm = await sendEmail(name, email, telephone, message)
   return NextResponse.json({ ...responseForm })

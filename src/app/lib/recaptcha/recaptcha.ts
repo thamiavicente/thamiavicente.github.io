@@ -19,26 +19,26 @@ export const validateToken = async (token: string) => {
         })
         
         const responseJson = await response.json()
-        const scoreNotValid = responseJson.score < 0.7
+        const scoreNotValid = responseJson.score < 0.5
 
-        if(responseJson.success || scoreNotValid) {
+        if(!responseJson.success || scoreNotValid) {
             return {
+                status: 500,
                 error: true,
-                message: scoreNotValid ? scoreNotValid : 'not success',
-                status: 500
+                message: scoreNotValid ? scoreNotValid : JSON.stringify(responseJson)
             }
         }
 
         return {
+            status: 200,
             success: true,
-            score: responseJson.score,
-            status: 200
+            score: responseJson.score
         }
     } catch (error) {
         return {
+            status: 500,
             error: true,
-            message: error,
-            status: 500
+            message: error
         }
     }
 }

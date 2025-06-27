@@ -1,7 +1,7 @@
 'use client'
 import { useAppSelector, useAppDispatch } from '@/app/lib/store/hooks'
 import { useEffect, useCallback } from 'react'
-import { setConnected } from '@/components/02-molecules/form/formSlice'
+import { setConnected, setErrorSendMessage, setSuccessSendMessage } from '@/components/02-molecules/form/formSlice'
 
 import Form from '@/components/02-molecules/form/form'
 import FeedbackMessage from '@/components/02-molecules/feedback-message/feedback-message'
@@ -12,7 +12,10 @@ export default function ContactForm() {
 
     const dispatch = useAppDispatch()
 
-    const showForm = useCallback(() => { dispatch(setConnected(true)) },[dispatch])
+    const showForm = () => { 
+      dispatch(setSuccessSendMessage(false))
+      dispatch(setErrorSendMessage(false))
+    }
 
     useEffect(() => {
       const checkConnection = async () => {
@@ -22,7 +25,7 @@ export default function ContactForm() {
           })).json()
           
           if (connection.status === 200) {
-            showForm()
+            dispatch(setConnected(true))
             return
           }
           dispatch(setConnected(false))
@@ -30,26 +33,28 @@ export default function ContactForm() {
         }
     
       checkConnection()
-    }, [showForm, dispatch])
+    }, [dispatch])
 
     return (
       <>
-        { step === 'form' && errorMessage
-          && <FeedbackMessage
-                feedbackTitle="Oooops!"
-                feedbackSubtitle="something went wrong :("
-                feedbackDescription={[<p key="description">Your message was not sent. Please try again later or send me an email at </p>, <a key="link" href="mailto:thamiavicente@gmail.com">thamiavicente@gmail.com</a>]}
-                feedbackButton="try again"
-                buttonAction={showForm}>
-            </FeedbackMessage>
-        }
         { step === 'form' && <Form></Form> }
         { step === 'successSendMessage'
           && <FeedbackMessage
+                messageId="sendSuccess"
                 feedbackTitle="Thank you"
                 feedbackSubtitle="for your message :)"
                 feedbackDescription="You'll get a reply as soon as possible"
                 feedbackButton="send another message"
+                buttonAction={showForm}>
+            </FeedbackMessage>
+        }
+        { step === 'form' && errorMessage
+          && <FeedbackMessage
+                messageId="sendError"
+                feedbackTitle="Oooops!"
+                feedbackSubtitle="something went wrong :("
+                feedbackDescription={[<p key="description">Your message was not sent. Please try again later or send me an email at </p>, <a key="link" href="mailto:thamiavicente@gmail.com">thamiavicente@gmail.com</a>]}
+                feedbackButton="try again"
                 buttonAction={showForm}>
             </FeedbackMessage>
         }
