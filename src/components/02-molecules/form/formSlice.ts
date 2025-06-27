@@ -37,7 +37,7 @@ export const formSlice = createSlice({
         },
         setSuccessSendMessage: (state, action: PayloadAction<boolean>) => { 
             state.successSendMessage = action.payload
-            if(action.payload) state.step = 'successSendMessage'
+            state.step = action.payload ? 'successSendMessage' : 'form'
         },
         setErrorSendMessage: (state, action: PayloadAction<boolean>) => {
             state.errorSendMessage = action.payload
