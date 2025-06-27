@@ -1,5 +1,5 @@
 'use client'
-import StoreProvider  from '@/app/api/store/store-provider'
+import StoreProvider  from '@/app/lib/store/store-provider'
 
 import { FavIcon, LocationIcon, EmailIcon } from '@/components/01-atoms/icons'
 import ContactForm from '@/components/03-organisms/contact-form/contact-form'
