@@ -13,14 +13,17 @@ This project aims to centralize my professional contacts, share a bit of my jour
 
 ## :sparkles: Features
 
+- Built using Next.js App Router (/app) with file-based routing
 - Home page with greeting and introduction  
 - "About" page with my career path in tech  
 - Contact page with email and professional links
+  - Gmail connection through Nodemailer for contact form handling
+  - reCAPTCHA v3 for user validation
 - Accessibility best practices applied (tested with Google Lighthouse and WAVE)
-- Built using Next.js App Router (/app) with file-based routing
+  - Widget VLibras for accessibility
   
 > [!NOTE]
-This project is **in development**: more sections, visual improvements, automated tests, and **Nodemailer** integration are coming soon.
+This project is **in development**: more sections, visual improvements, and automated tests are coming soon.
 
 ## :hammer_and_pick: Tools
 
@@ -29,8 +32,10 @@ This project is **in development**: more sections, visual improvements, automate
 | [React](https://react.dev/)        | ^19.0.0     |
 | [Next.js](https://nextjs.org/)      | 15.3.2      |
 | [Node.js](https://nodejs.org/en)      | ^18.20.8    |
-| [Nodemailer](https://nodemailer.com/)   | ^7.0.3 _(pending)_ |
-| Vercel       | [:white_check_mark: Deployed](https://thamiavicente-github-io.vercel.app) |
+| [Nodemailer](https://nodemailer.com/)   | ^7.0.3 |
+| [reCaptcha](https://developers.google.com/recaptcha/docs/v3?hl=pt-br) | V3 |
+| [VLibras](https://vlibras.gov.br/doc/widget/installation/webpageintegration.html?_ga=2.205222480.1595640842.1682445746-816840059.1655413110) | v1.1.0|
+| [Vercel](https://vercel.com/) | :white_check_mark: Deployed |
 
 ## :beginner: Running Locally
 
